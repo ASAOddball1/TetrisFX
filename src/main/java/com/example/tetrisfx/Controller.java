@@ -77,11 +77,11 @@ public class Controller {
             c.setY(SIZE);
             d.setX(XMAX / 2 + SIZE);
             d.setY(SIZE);
-            name = "1";
+            name = "l";
         } else if (block < 45) {
             a.setX(XMAX / 2 - SIZE);
             b.setX(XMAX / 2);
-            b.setX(XMAX / 2 - SIZE);
+            c.setX(XMAX / 2 - SIZE);
             c.setY(SIZE);
             d.setX(XMAX / 2);
             d.setY(SIZE);
@@ -89,7 +89,7 @@ public class Controller {
         } else if (block < 60) {
             a.setX(XMAX / 2 + SIZE);
             b.setX(XMAX / 2);
-            b.setX(XMAX / 2);
+            c.setX(XMAX / 2);
             c.setY(SIZE);
             d.setX(XMAX / 2 - SIZE);
             d.setY(SIZE);
@@ -97,14 +97,14 @@ public class Controller {
         } else if (block < 75) {
             a.setX(XMAX / 2 - SIZE);
             b.setX(XMAX / 2);
-            b.setX(XMAX / 2);
+            c.setX(XMAX / 2);
             c.setY(SIZE);
             d.setX(XMAX / 2 + SIZE);
             name = "t";
         } else if (block < 90) {
             a.setX(XMAX / 2 + SIZE);
             b.setX(XMAX / 2);
-            b.setX(XMAX / 2 + SIZE);
+            c.setX(XMAX / 2 + SIZE);
             c.setY(SIZE);
             d.setX(XMAX / 2 + SIZE + SIZE);
             d.setY(SIZE);
@@ -112,7 +112,7 @@ public class Controller {
         } else {
             a.setX(XMAX / 2 - SIZE - SIZE);
             b.setX(XMAX / 2 - SIZE);
-            b.setX(XMAX / 2);
+            c.setX(XMAX / 2);
             d.setX(XMAX / 2 + SIZE);
             name = "i";
         }
