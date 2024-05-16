@@ -10,6 +10,10 @@ public class Controller {
 
     //Moving the blocks
 
+    //*public static void TouchBottom (Form form) {
+
+    //*}
+
     public static void MoveRight (Form form){
         if (form.a.getX() + MOVE <= XMAX - SIZE && form.b.getX() + MOVE <= XMAX - SIZE
                 && form.c.getX() + MOVE - SIZE <= XMAX && form.d.getX() + MOVE <= XMAX - SIZE)

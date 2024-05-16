@@ -33,7 +33,7 @@ public class Form {
             case "j":
                 color = Color.SLATEGRAY;
                 break;
-            case "1":
+            case "l":
                 color = Color.DARKGOLDENROD;
                 break;
             case "o":
