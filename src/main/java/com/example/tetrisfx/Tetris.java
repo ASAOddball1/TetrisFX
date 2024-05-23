@@ -65,6 +65,8 @@ public class Tetris extends Application {
         stage.setTitle("T E T R I S");
         stage.show();
 
+
+
         Timer fall = new Timer();
         TimerTask task = new TimerTask() {
             public void run() {
@@ -112,7 +114,7 @@ public class Tetris extends Application {
                         Controller.MoveRight(form);
                         break;
                     case DOWN:
-                        MoveDown(form);
+                        Controller.MoveDown(form);
                         score++;
                         break;
                     case LEFT:
@@ -122,6 +124,7 @@ public class Tetris extends Application {
                         MoveTurn(form);
                         break;
                     case SPACE:
+                        Controller.moveDownToBottom(form);
                         break;
                 }
             }

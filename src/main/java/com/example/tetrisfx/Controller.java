@@ -8,11 +8,28 @@ public class Controller {
     public static int YMAX = Tetris.YMAX;
     public static int[][] MESH = Tetris.MESH;
 
-    //Moving the blocks
 
-    //*public static void TouchBottom (Form form) {
+    public static void MoveDown (Form form) {
+        if (form.a.getY() + MOVE <= YMAX - SIZE &&
+                form.b.getY() + MOVE <= YMAX - SIZE &&
+                form.c.getY() + MOVE <= YMAX - SIZE &&
+                form.d.getY() + MOVE <= YMAX - SIZE) {
 
-    //*}
+            int movea = MESH[((int) form.a.getX() / SIZE)][((int) form.a.getY() / SIZE + 1)];
+            int moveb = MESH[((int) form.b.getX() / SIZE)][((int) form.b.getY() / SIZE + 1)];
+            int movec = MESH[((int) form.c.getX() / SIZE)][((int) form.c.getY() / SIZE + 1)];
+            int moved = MESH[((int) form.d.getX() / SIZE)][((int) form.d.getY() / SIZE + 1)];
+
+            if (movea == 0 && movea == moveb && moveb == movec && movec == moved) {
+                form.a.setY(form.a.getY() + MOVE);
+                form.b.setY(form.b.getY() + MOVE);
+                form.c.setY(form.c.getY() + MOVE);
+                form.d.setY(form.d.getY() + MOVE);
+            }
+        }
+    }
+
+
 
     public static void MoveRight (Form form){
         if (form.a.getX() + MOVE <= XMAX - SIZE && form.b.getX() + MOVE <= XMAX - SIZE
@@ -52,9 +69,37 @@ public class Controller {
         }
     }
 
+    public static void moveDownToBottom (Form form) {
+        //AI Helped me with this
+        while (canMoveDown(form)) {
+            form.a.setY(form.a.getY() + MOVE);
+            form.b.setY(form.b.getY() + MOVE);
+            form.c.setY(form.c.getY() + MOVE);
+            form.d.setY(form.d.getY() + MOVE);
+        }
+    }
+
+    public static boolean canMoveDown(Form form) {
+        if (form.a.getY() + MOVE > YMAX - SIZE ||
+                form.b.getY() + MOVE > YMAX - SIZE ||
+                form.c.getY() + MOVE > YMAX - SIZE ||
+                form.d.getY() + MOVE > YMAX - SIZE) {
+            return false;
+        }
+
+        int movea = MESH[(int) form.a.getX() / SIZE][(int) form.a.getY() / SIZE + 1];
+        int moveb = MESH[(int) form.b.getX() / SIZE][(int) form.b.getY() / SIZE + 1];
+        int movec = MESH[(int) form.c.getX() / SIZE][(int) form.c.getY() / SIZE + 1];
+        int moved = MESH[(int) form.d.getX() / SIZE][(int) form.d.getY() / SIZE + 1];
+
+        return movea == 0 && movea == moveb && moveb == movec && movec == moved;
+    }
+
+
+
     //Creating the stones
     public static Form makeRect() {
-        //Random color for the stones
+        // randomly generate stone order
 
         int block = (int) (Math.random() * 100);
         String name;
@@ -123,7 +168,7 @@ public class Controller {
 
         return new Form (a, b, c, d, name);
     }
- 
+
 
 
 }
