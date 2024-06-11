@@ -13,7 +13,6 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
-import javafx.scene.shape.MoveTo;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -64,9 +63,7 @@ public class Tetris extends Application {
         stage.setScene(scene);
         stage.setTitle("T E T R I S");
         stage.show();
-
-
-
+            
         Timer fall = new Timer();
         TimerTask task = new TimerTask() {
             public void run() {
